@@ -286,6 +286,14 @@ static const float kTopMargin = 2.0;
                     CGContextTranslateCTM(ctx, 0.0, offsetY);
                     CGContextScaleCTM(ctx, 1.0, -1.0);
                     CGContextDrawImage(ctx, imageRect, image.CGImage);
+                    if (self.selected)
+                    {
+                        CGContextSetBlendMode(ctx, kCGBlendModeColor);
+                        CGContextSetFillColorWithColor(ctx, (__bridge CGColorRef)_tabIconColorsSelected[0]);
+                        CGContextFillRect(ctx, imageRect);
+                        CGContextSetBlendMode(ctx, kCGBlendModeDestinationIn);
+                        CGContextDrawImage(ctx, imageRect, image.CGImage);
+                    }
                 }
                 CGContextRestoreGState(ctx);
             } else {
