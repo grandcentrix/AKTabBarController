@@ -24,7 +24,7 @@
 #import "UIViewController+AKTabBarController.h"
 
 // Default height of the tab bar
-static const int kDefaultTabBarHeight = 50;
+static const int kDefaultTabBarHeight = 49;
 
 // Default Push animation duration
 static const float kPushAnimationDuration = 0.35;
